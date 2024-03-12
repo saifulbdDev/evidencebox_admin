@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  @apply bg-gray-100
+}
+
+/* .btn-gradient-1 {
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(to right, #05dfa6, #2e82ee) 1;
+} */
+
+.btn-gradient-1 {
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to right, #05dfa6, #2e82ee);
+
+  border: 1px solid transparent;
+}
+
+#timeline:hover .hover-playhead::before{
+  opacity: 1;
+}
+#timeline:hover .hover-playhead::after{
+  opacity: 1;
+}
+#timeline .hover-playhead::before {
+  opacity: 0;
+  content: attr(data-content);
+  display: block;
+  position: absolute;
+  top: -30px;
+  right: -23px;
+  width: 40px;
+  padding: 3px;
+  text-align: center;
+  color: white;
+ 
+  border-radius: calc( 20px - 12px);
+}
+
+#timeline .hover-playhead::after {
+  opacity: 0;
+  content: "";
+  z-index: 20;
+  display: block;
+  position: absolute;
+  top: -2px;
+  right: -10px;
+  border-top: 8px solid #BD2217;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+}
